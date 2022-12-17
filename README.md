@@ -9,5 +9,5 @@ I can use this to solve the issue of having unique passwords that meet certain c
 # What did you learn?
 I learned how to use functions to duplicate code. I learned why DRY code is so important.
 # Screenshot
-
-#Website URL
+![Screenshot](assets/screenshot)
+# Website URL
