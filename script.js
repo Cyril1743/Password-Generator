@@ -24,7 +24,6 @@ function generatePassword() {
   var legnth = prompt("Enter legnth of password. 8-128 characters.");
   if (legnth < 8 || legnth > 128) {
     alert("Invalid Length")
-    return
   }
   var lowercasePrompt = prompt("Lowercase letters? Y/N");
   var uppercasePrompt = prompt("Uppercase letters? Y/N")
@@ -41,36 +40,61 @@ function generatePassword() {
 
   if (lowercasePrompt.toUpperCase() === "Y") {
     var lowercasepromptResult = "Y"
-    return
   }
   if (uppercasePrompt.toUpperCase() === "Y") {
     var uppercasepromptResult = "Y"
-    return
   }
   if (numbersPrompt.toUpperCase() === "Y") {
     var numberspromptResult = "Y"
-    return
   }
   if (symbolsPrompt.toUpperCase() === "Y") {
     var symbolspromptResult = "Y"
-    return
   }
   if (lowercasePrompt !== "Y" && uppercasePrompt !== "Y" && numbersPrompt !== "Y" && symbolsPrompt !== "Y") {
     alert("Invalid criteria selected")
-    return
   }
 
 
   //Function to pull from indices with random numbers
   function lowercaseletterFunction(x) {
-    for (var i = 0; i <= x; i++) {
-      var random = Math.floor(Math.random() * 29)
+    for (var i = 0; i < x; i++) {
+      var random = Math.floor(Math.random() * 28)
       finalPassword.push(lowercaseLetters[random])
     }
   }
+  function uppercaseletterFunction(x) {
+    for (var i = 0; i < x; i++) {
+      var random = Math.floor(Math.random() * 28)
+      finalPassword.push(uppercaseLetters[random])
+    }
+  }
+  function numbersFunction(x) {
+    for (var i = 0; i < x; i++) {
+      var random = Math.floor(Math.random() * 9)
+      finalPassword.push(numbers[random])
+    }
+  }
+  function symbolsFunction(x) {
+    for (var i = 0; i < x; i++) {
+      var random = Math.floor(Math.random() * 18)
+      finalPassword.push(symbols[random])
+    }
+  }
   //Ifs to determine what function will run with selected criteria
-
-  lowercaseletterFunction(3);
-  console.log(finalPassword)
+  if (lowercasepromptResult === "Y" && uppercasepromptResult === "Y" && numberspromptResult === "Y" && symbolspromptResult === "Y") {
+    lowercaseletterFunction(Math.floor(legnth / 4) + (legnth % 4))
+    uppercaseletterFunction(Math.floor(legnth/4))
+    numbersFunction(Math.floor(legnth/4))
+    symbolsFunction(Math.floor(legnth/4))
+  } else if (lowercasepromptResult === "Y" && uppercasepromptResult === "Y" && numberspromptResult === "Y") {
+    lowercaseletterFunction(Math.floor(legnth/3)+(legnth%3))
+    uppercaseletterFunction(Math.floor(legnth/3))
+    numbersFunction(Math.floor(legnth/3))
+  } else if (lowercasepromptResult === "Y" && uppercasepromptResult === "Y" && symbolspromptResult === "Y") {
+    lowercaseletterFunction(Math.floor(legnth/3)+(legnth%3))
+    uppercaseletterFunction(Math.floor(legnth/3))
+    symbolsFunction(Math.floor(legnth/3))
+  } else if (lowercasepromptResult === "Y" && numberspromptResult === "Y" && symbolspromptResult)
   //Output the password
+  console.log(finalPassword)
 }
