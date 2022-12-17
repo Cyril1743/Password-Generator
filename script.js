@@ -21,22 +21,24 @@ var symbols = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", ",", 
 //Function to randomly generate numbers to pull from indices
 function generatePassword() {
   //Prompt to ask the user the specifics
-  var legnth = prompt("Enter legnth of password");
-  if (legnth < 8 || legnth > 128){
-    alert("Too short or too long")
+  var legnth = prompt("Enter legnth of password. 8-128 characters.");
+  if (legnth < 8 || legnth > 128) {
+    alert("Invalid Length")
     return
   }
   var lowercasePrompt = prompt("Lowercase letters? Y/N");
   var uppercasePrompt = prompt("Uppercase letters? Y/N")
   var numbersPrompt = prompt("Numbers? Y/N")
   var symbolsPrompt = prompt("Symbols? Y/N")
+  //For the final product
+  var finalPassword = []
   //To record the responses
   var lowercasepromptResult = ""
   var uppercasepromptResult = ""
   var numberspromptResult = ""
   var symbolspromptResult = ""
   //Ifs to check to make sure a response was collected
-  
+
   if (lowercasePrompt.toUpperCase() === "Y") {
     var lowercasepromptResult = "Y"
     return
@@ -49,19 +51,26 @@ function generatePassword() {
     var numberspromptResult = "Y"
     return
   }
-  if (symbolsPrompt.toUpperCase() === "Y")
-  {
+  if (symbolsPrompt.toUpperCase() === "Y") {
     var symbolspromptResult = "Y"
     return
   }
-  if (lowercasePrompt !== "Y" && uppercasePrompt !== "Y" && numbersPrompt !== "Y" && symbolsPrompt !== "Y"){
+  if (lowercasePrompt !== "Y" && uppercasePrompt !== "Y" && numbersPrompt !== "Y" && symbolsPrompt !== "Y") {
     alert("Invalid criteria selected")
     return
   }
+
+
   //Function to pull from indices with random numbers
+  function lowercaseletterFunction(x) {
+    for (var i = 0; i <= x; i++) {
+      var random = Math.floor(Math.random() * 29)
+      finalPassword.push(lowercaseLetters[random])
+    }
+  }
+  //Ifs to determine what function will run with selected criteria
 
-
-
-
+  lowercaseletterFunction(3);
+  console.log(finalPassword)
   //Output the password
 }
