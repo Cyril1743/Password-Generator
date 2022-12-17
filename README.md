@@ -11,3 +11,4 @@ I learned how to use functions to duplicate code. I learned why DRY code is so i
 # Screenshot
 ![Screenshot](assets/screenshot.png)
 # Website URL
+https://cyril1743.github.io/password-generator/
