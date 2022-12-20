@@ -24,6 +24,7 @@ function generatePassword() {
   var length = prompt("Enter length of password. 8-128 characters.");
   if (length < 8 || length > 128) {
     alert("Invalid Length");
+    return
   }
   var lowercasePrompt = prompt("Lowercase letters? Y/N");
   var uppercasePrompt = prompt("Uppercase letters? Y/N");
