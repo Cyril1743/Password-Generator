@@ -22,9 +22,12 @@ var symbols = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", ",", 
 function generatePassword() {
   //Prompt to ask the user the specifics
   var length = prompt("Enter length of password. 8-128 characters.");
-  if (length < 8 || length > 128) {
+  if (length <= 128 && length >= 8) {
+    console.log(length)
+  } else {
     alert("Invalid Length");
-    return
+    generatePassword();
+    return;
   }
   var lowercasePrompt = prompt("Lowercase letters? Y/N");
   var uppercasePrompt = prompt("Uppercase letters? Y/N");
@@ -51,7 +54,7 @@ function generatePassword() {
   if (symbolsPrompt.toUpperCase() === "Y") {
     var symbolspromptResult = "Y";
   }
-  if (lowercasePrompt !== "Y" && uppercasePrompt !== "Y" && numbersPrompt !== "Y" && symbolsPrompt !== "Y") {
+  if (lowercasePrompt != "Y" && uppercasePrompt != "Y" && numbersPrompt != "Y" && symbolsPrompt != "Y") {
     alert("Invalid criteria selected");
   }
 
