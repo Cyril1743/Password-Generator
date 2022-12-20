@@ -59,25 +59,25 @@ function generatePassword() {
   //Function to pull from indices with random numbers
   function lowercaseletterFunction(x) {
     for (var i = 0; i < x; i++) {
-      var random = Math.floor(Math.random() * 28);
+      var random = Math.floor(Math.random() * lowercaseLetters.length);
       finalPassword.push(lowercaseLetters[random]);
     }
   }
   function uppercaseletterFunction(x) {
     for (var i = 0; i < x; i++) {
-      var random = Math.floor(Math.random() * 28);
+      var random = Math.floor(Math.random() * uppercaseLetters.length);
       finalPassword.push(uppercaseLetters[random]);
     }
   }
   function numbersFunction(x) {
     for (var i = 0; i < x; i++) {
-      var random = Math.floor(Math.random() * 9);
+      var random = Math.floor(Math.random() * numbers.length);
       finalPassword.push(numbers[random]);
     }
   }
   function symbolsFunction(x) {
     for (var i = 0; i < x; i++) {
-      var random = Math.floor(Math.random() * 18);
+      var random = Math.floor(Math.random() * symbols.length);
       finalPassword.push(symbols[random]);
     }
   }
