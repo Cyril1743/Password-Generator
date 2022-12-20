@@ -131,5 +131,5 @@ function generatePassword() {
     numbersFunction(length);
   }
   //Output the password
-  return finalPassword;
+  return finalPassword.join("");
 }
