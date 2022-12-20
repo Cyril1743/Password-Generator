@@ -115,12 +115,12 @@ function generatePassword() {
   } else if (uppercasepromptResult === "Y" && numberspromptResult === "Y") {
     uppercaseletterFunction(Math.floor(length / 2) + (length % 2));
     numbersFunction(Math.floor(length / 2));
-  } else if (uppercasepromptResult === "Y" && symbolspromptResult === "Y"){
-    uppercaseletterFunction(Math.floor(length/2)+(length%2));
-    symbolsFunction(Math.floor(length/2));
+  } else if (uppercasepromptResult === "Y" && symbolspromptResult === "Y") {
+    uppercaseletterFunction(Math.floor(length / 2) + (length % 2));
+    symbolsFunction(Math.floor(length / 2));
   } else if (numberspromptResult === "Y" && symbolspromptResult === "Y") {
-    numbersFunction(Math.floor(length/2)+(length%2));
-    symbolsFunction(Math.floor(length/2));
+    numbersFunction(Math.floor(length / 2) + (length % 2));
+    symbolsFunction(Math.floor(length / 2));
   } else if (lowercasepromptResult === "Y") {
     lowercaseletterFunction(length);
   } else if (uppercasepromptResult === "Y") {
